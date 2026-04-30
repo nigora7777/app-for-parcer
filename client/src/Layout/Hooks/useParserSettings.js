@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import axios from "axios";
 
-const BASE_URL = "http://91.201.54.86:8000/api/v1"; 
+const BASE_URL = `${process.env.REACT_APP_API_URL}/api/v1`;
 const SUPPORTED_FORMATS = ["doc", "docx", "ppt", "pptx", "pdf", "txt", "md"];
 const MAX_SIZE = 50 * 1024 * 1024;
 const SETTINGS_KEY = "parserSettings";
