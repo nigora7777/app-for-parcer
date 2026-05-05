@@ -42,7 +42,6 @@ const useParserSettings = () => {
   const handleFileChange = useCallback((event) => {
     const newFiles = Array.from(event.target.files);
     if (newFiles.length === 0) return;
-
       const validateFile = (file) => {
       const ext = file.name.toLowerCase().split('.').pop();
       if (file.size === 0) {
@@ -133,7 +132,6 @@ const useParserSettings = () => {
     });
   }, []);
 
-
   const saveTaskToStorage = useCallback((task_id) => {
     const task = { id: task_id, created_at: new Date().toISOString() };
     localStorage.setItem('lastTask', JSON.stringify(task));
@@ -205,7 +203,6 @@ const useParserSettings = () => {
       setErrorMessage(mapError(err.response?.status));
     }
   }, []);
-
 
   useEffect(() => {
     let interval;
